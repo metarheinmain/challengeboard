@@ -1,0 +1,23 @@
+{% extends "board/base.html" %}
+
+{% block content %}
+    <h1>Challenges</h1>
+    <p>
+        At MRMCD15, there will be multiple challenges for you of very different types.
+        For some challenges, you might need muscles in your arms, for others, you'll
+        rather need them in the brain. There will be challenges with and without sports,
+        and challenges with and without computers. Some challenges run during the whole
+        event, others happen at a special place and time.
+    </p>
+    <p>
+        Every challenge can be won be exactly one person and will be rewarded with endless
+        honor and, of course, a price from the event crew, that will be awarded at the
+        event's closing ceremony.
+    </p>
+    <h2>List of challenges</h2>
+    <ul>
+        {% for c in challenges %}
+            <li><a href="{% url "board:detail" id=c.id %}">{{ c.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

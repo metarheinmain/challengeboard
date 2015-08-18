@@ -1,0 +1,50 @@
+{% extends "board/base.html" %}
+
+{% block content %}
+    <h1>{{ challenge.title }}</h1>
+    <dl>
+        {% if challenge.description %}
+            <dt>Description:</dt>
+            <dd>
+                {{ descr|safe }}
+            </dd>
+        {% endif %}
+        {% if challenge.location %}
+            <dt>Location:</dt>
+            <dd><p>{{ challenge.location }}</p></dd>
+        {% endif %}
+        {% if challenge.location %}
+            <dt>Challenge time:</dt>
+            <dd><p>{{ challenge.datetime|date:"D H:i" }}</p></dd>
+        {% endif %}
+        {% if challenge.url %}
+            <dt>Challenge url:</dt>
+            <dd><p>
+                <a href="{{ challenge.url }}">{{ challenge.url }}</a>
+            </p></dd>
+        {% endif %}
+        {% if challenge.url %}
+            <dt>Current highscore:</dt>
+            <dd>
+                <table>
+                    {% for p in highscore %}
+                        <tr>
+                            <td>{{ p.pos }}</td>
+                            <td>{{ p.name }}</td>
+                            <td>
+                                {% if challenge.mode == "first" %}
+                                    {{ p.datetime|date:"D H:i" }}
+                                {% else %}
+                                    {{ p.value }} {% if challenge.value_unit %}{{ challenge.value_unit }}{% endif %}
+                                {% endif %}
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                </table>
+            </dd>
+        {% endif %}
+
+
+    </dl>
+{% endblock %}

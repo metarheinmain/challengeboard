@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>MRMCD2015 challenges</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="https://mrmcd.net/2015/img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://mrmcd.net/2015/css/style.css">
+
+</head>
+<body>
+<div class="container">
+    <header>
+        <img src="https://mrmcd.net/2015/logo-web.svg">
+    </header>
+</div>
+<div class="navbar">
+    <nav class="container">
+        <ul>
+            <li class="current_page_item">
+                <a href="{% url 'board:index' %}">Challenges</a>
+            </li>
+            <li class="">
+                <a href="https://mrmcd.net/2015/">To the event website</a>
+            </li>
+            <li class="mobile-hidden">
+                <a>&nbsp;</a>
+            </li>
+            <li class="mobile-hidden">
+                <a>&nbsp;</a>
+            </li>
+            <li class="mobile-hidden">
+                <a>&nbsp;</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container content hyphenate">
+    {% block content %}
+
+    {% endblock %}
+</div>
+<footer class="navbar">
+    <nav class="container">
+        <ul>
+            <li><a>MRMCD e.V.</a></li>
+            <li>
+                <a href="https://mrmcd.net/2015/impressum.html">Impressum</a>
+            </li>
+            <li>
+                <a href="https://twitter.com/mrmcd15">
+                    <img src="https://mrmcd.net/2015/img/twitter.svg" alt="Twitter" />
+                    <span class="mobile-only">@MRMCD15</span>
+                </a>
+            </li>
+            <li class="mobile-hidden"><a>&nbsp;</a></li>
+            <li class="mobile-hidden"><a>&nbsp;</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+</html>
