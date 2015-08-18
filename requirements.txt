@@ -1,3 +1,5 @@
 Django>=1.8
 Markdown
+static3==0.6.1
+-e git+https://github.com/pretix/dj-static.git@script-path#egg=dj-static
 
