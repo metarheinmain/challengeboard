@@ -4,17 +4,8 @@ import markdown
 
 def index(request):
     ctx = {
-        'challenges': Challenge.objects.all().order_by('-id')
+        'challenges': Challenge.objects.all().order_by('datetime').prefetch_related('participants')
     }
+    for c in ctx['challenges']:
+        c.descr = markdown.markdown(c.description)
     return render(request, 'board/index.html', ctx)
-
-
-def detail(request, id):
-    challenge = get_object_or_404(Challenge, id=id)
-    descr = markdown.markdown(challenge.description)
-    ctx = {
-        'challenge': challenge,
-        'descr': descr,
-        'highscore': challenge.get_highscore()
-    }
-    return render(request, 'board/detail.html', ctx)
