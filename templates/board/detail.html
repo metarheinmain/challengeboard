@@ -13,9 +13,9 @@
             <dt>Location:</dt>
             <dd><p>{{ challenge.location }}</p></dd>
         {% endif %}
-        {% if challenge.location %}
+        {% if challenge.datetime %}
             <dt>Challenge time:</dt>
-            <dd><p>{{ challenge.datetime|date:"D H:i" }}</p></dd>
+			<dd><p>{{ challenge.datetime|date:"D H:i" }} {% if challenge.datetime_end %}– {{ challenge.datetime_end|date:"D H:i" }}{% endif %}</p></dd>
         {% endif %}
         {% if challenge.url %}
             <dt>Challenge url:</dt>

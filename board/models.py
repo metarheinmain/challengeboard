@@ -6,6 +6,7 @@ class Challenge(models.Model):
     description = models.TextField(blank=True)
     location = models.CharField(max_length=300, blank=True, null=True)
     datetime = models.DateTimeField(blank=True, null=True)
+    datetime_end = models.DateTimeField(verbose_name='End date', blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     mode = models.CharField(max_length=100, choices=(
         ('max', 'Highest value wins'),
