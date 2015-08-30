@@ -55,7 +55,7 @@
                                 {{ c.descr|safe }}
                             </p>
                         {% endif %}
-                        {% if c.participants %}
+                        {% if c.participants|length > 0 %}
                             <p>
                                 <strong>Current Highscore</strong>
                             </p>
